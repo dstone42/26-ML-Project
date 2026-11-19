@@ -27,7 +27,7 @@ downloaded from cBioPortal. The raw study files are in
 | What it is for | File | What is in it |
 | --- | --- | --- |
 | RNA targets | `data_mrna_seq_v2_rsem.txt` | 20,531 genes across 593 samples |
-| CNA predictors | `data_cna.txt` | 25,131 genes across 593 samples |
+| CNA predictors | `data_log2_cna.txt` | Log2 copy-number values across 593 samples |
 | Methylation predictors | `data_methylation_hm450.txt` | 396,064 CpG probes across 382 samples |
 
 For analyses that use all three data types, we need to work with the samples
