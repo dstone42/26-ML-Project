@@ -1,0 +1,29 @@
+# Downloaded TCGA/cBioPortal study archive and raw data matrices.
+# These are reproducibly obtainable from cBioPortal and exceed GitHub limits.
+coadread_tcga_pan_can_atlas_2018.tar.gz
+coadread_tcga_pan_can_atlas_2018/data_*
+coadread_tcga_pan_can_atlas_2018/normals/data_*
+
+# Python and Jupyter local state
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments and editor/OS files
+.venv/
+venv/
+env/
+.env
+.DS_Store
+.vscode/
+.idea/
+
+# Locally generated analysis outputs
+outputs/
+results/
+*.log

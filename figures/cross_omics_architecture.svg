@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Cross-omic architecture for predicting colorectal cancer biomarker gene expression</title>
+  <desc id="desc">Genome-wide DNA methylation and copy-number alteration profiles from matched TCGA colorectal tumors are modeled separately with elastic-net regression. Selected features are combined in an integrated model, and all three models are evaluated with nested cross-validation for feature stability and held-out RNA-expression prediction.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
+    </marker>
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#087e8b"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d66a16"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#1d2a35" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 700; fill: #13293d; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 17px; fill: #52606d; }
+      .section { font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: 700; fill: #13293d; letter-spacing: 1.2px; }
+      .node-title { font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 700; fill: #13293d; }
+      .node-text { font-family: Arial, Helvetica, sans-serif; font-size: 15px; fill: #374957; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #52606d; }
+      .tag { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .aim-title { font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: 700; fill: #13293d; }
+      .aim-text { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #374957; }
+      .arrow { fill: none; stroke: #52606d; stroke-width: 3; marker-end: url(#arrow); }
+      .arrow-teal { fill: none; stroke: #087e8b; stroke-width: 3; marker-end: url(#arrowTeal); }
+      .arrow-orange { fill: none; stroke: #d66a16; stroke-width: 3; marker-end: url(#arrowOrange); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="900" fill="#ffffff"/>
+  <rect x="45" y="36" width="11" height="68" rx="5" fill="#087e8b"/>
+  <text x="78" y="67" class="title">Predicting CRC biomarker RNA expression from DNA methylation and copy-number alterations</text>
+  <text x="78" y="96" class="subtitle">Genome-wide, feature-selecting elastic-net models in matched TCGA COADREAD tumors</text>
+
+  <!-- Stage labels -->
+  <text x="75" y="163" class="section">1 · MATCHED MULTI-OMIC INPUTS</text>
+  <text x="510" y="163" class="section">2 · MODALITY-SPECIFIC FEATURE DISCOVERY</text>
+  <text x="1065" y="163" class="section">3 · INTEGRATION &amp; EVALUATION</text>
+
+  <!-- Dataset anchor -->
+  <rect x="75" y="186" width="340" height="90" rx="16" fill="#eaf2f8" stroke="#c7dbe9" stroke-width="2"/>
+  <circle cx="111" cy="230" r="19" fill="#2b6f99"/>
+  <path d="M104 229h14M111 222v14" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <text x="145" y="222" class="node-title">TCGA PanCancer Atlas</text>
+  <text x="145" y="247" class="node-text">COADREAD tumors with all 3 modalities</text>
+  <text x="145" y="267" class="small">Matched analysis cohort: up to 382 samples</text>
+
+  <!-- inputs -->
+  <rect x="75" y="333" width="340" height="136" rx="16" fill="#e4f5f2" stroke="#8acfc4" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="75" y="333" width="13" height="136" rx="6" fill="#087e8b"/>
+  <text x="112" y="375" class="node-title">DNA methylation</text>
+  <text x="112" y="402" class="node-text">396,064 genome-wide CpG probes</text>
+  <text x="112" y="428" class="small">Predictor matrix · methylation-only model</text>
+  <rect x="112" y="440" width="119" height="20" rx="10" fill="#087e8b"/>
+  <text x="126" y="455" class="tag">Modality 1</text>
+
+  <rect x="75" y="534" width="340" height="136" rx="16" fill="#fff0df" stroke="#efbd85" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="75" y="534" width="13" height="136" rx="6" fill="#d66a16"/>
+  <text x="112" y="576" class="node-title">Copy-number alterations</text>
+  <text x="112" y="603" class="node-text">25,131 genome-wide CNA features</text>
+  <text x="112" y="629" class="small">Predictor matrix · CNA-only model</text>
+  <rect x="112" y="641" width="119" height="20" rx="10" fill="#d66a16"/>
+  <text x="126" y="656" class="tag">Modality 2</text>
+
+  <!-- RNA target -->
+  <rect x="75" y="731" width="340" height="103" rx="16" fill="#f1ebf8" stroke="#cbb9e2" stroke-width="2"/>
+  <rect x="75" y="731" width="13" height="103" rx="6" fill="#7253a4"/>
+  <text x="112" y="770" class="node-title">RNA-expression target</text>
+  <text x="112" y="796" class="node-text">One prespecified CRC biomarker gene</text>
+  <text x="112" y="818" class="small">Continuous expression · repeated per target</text>
+
+  <!-- arrows input -->
+  <path d="M245 276 L245 321" class="arrow"/>
+  <path d="M415 401 C460 401 473 401 505 401" class="arrow-teal"/>
+  <path d="M415 602 C460 602 473 602 505 602" class="arrow-orange"/>
+
+  <!-- model panel -->
+  <rect x="490" y="186" width="505" height="530" rx="20" fill="#f8fafb" stroke="#d7e0e5" stroke-width="2"/>
+  <rect x="520" y="218" width="445" height="43" rx="11" fill="#e8eef2"/>
+  <text x="542" y="246" class="node-title">Outer-training split only</text>
+  <text x="800" y="246" class="small">repeated / nested CV</text>
+
+  <!-- meth model -->
+  <rect x="530" y="295" width="425" height="138" rx="15" fill="#ffffff" stroke="#8acfc4" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="530" y="295" width="11" height="138" rx="5" fill="#087e8b"/>
+  <text x="565" y="331" class="node-title">Methylation-only elastic net</text>
+  <text x="565" y="358" class="node-text">Inner-CV tuning + genome-wide feature selection</text>
+  <path d="M565 388 L741 388" stroke="#b6c8d0" stroke-width="2"/>
+  <text x="565" y="415" class="small">Output: selected CpGs + coefficient directions</text>
+
+  <!-- CNA model -->
+  <rect x="530" y="494" width="425" height="138" rx="15" fill="#ffffff" stroke="#efbd85" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="530" y="494" width="11" height="138" rx="5" fill="#d66a16"/>
+  <text x="565" y="530" class="node-title">CNA-only elastic net</text>
+  <text x="565" y="557" class="node-text">Inner-CV tuning + genome-wide feature selection</text>
+  <path d="M565 587 L741 587" stroke="#b6c8d0" stroke-width="2"/>
+  <text x="565" y="614" class="small">Output: selected CNA genes + coefficient directions</text>
+
+  <!-- feature arrows to integration -->
+  <path d="M955 364 C1016 364 1030 412 1062 412" class="arrow-teal"/>
+  <path d="M955 563 C1016 563 1030 512 1062 512" class="arrow-orange"/>
+
+  <!-- integration -->
+  <rect x="1060" y="320" width="430" height="270" rx="20" fill="#f8fafb" stroke="#d7e0e5" stroke-width="2"/>
+  <rect x="1090" y="349" width="370" height="74" rx="14" fill="#e9e1f4" stroke="#cbb9e2" stroke-width="2"/>
+  <text x="1120" y="380" class="node-title">Integrated selected-feature model</text>
+  <text x="1120" y="404" class="node-text">Selected CpGs + selected CNA features</text>
+  <path d="M1275 423 L1275 455" class="arrow"/>
+  <rect x="1090" y="455" width="370" height="94" rx="14" fill="#ffffff" stroke="#a9b9c3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1120" y="490" class="node-title">Held-out expression prediction</text>
+  <text x="1120" y="516" class="node-text">Compare all three model predictions</text>
+  <text x="1120" y="537" class="small">Same outer test split for fair comparison</text>
+  <path d="M415 782 C810 782 965 685 1090 552" class="arrow"/>
+
+  <!-- evaluation rail -->
+  <rect x="490" y="748" width="1000" height="86" rx="17" fill="#f3f6f8" stroke="#d7e0e5" stroke-width="2"/>
+  <circle cx="527" cy="791" r="17" fill="#2b6f99"/>
+  <path d="M519 791l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="560" y="780" class="node-title">Nested, leakage-safe evaluation</text>
+  <text x="560" y="808" class="node-text">Out-of-fold RMSE · MAE · R²  |  Feature selection frequency and coefficient-sign stability across resamples</text>
+
+  <!-- aims -->
+  <rect x="1070" y="619" width="198" height="87" rx="13" fill="#e4f5f2" stroke="#8acfc4" stroke-width="2"/>
+  <rect x="1086" y="636" width="55" height="23" rx="11" fill="#087e8b"/>
+  <text x="1097" y="653" class="tag">AIM 1</text>
+  <text x="1087" y="680" class="aim-title">Interpretability</text>
+  <text x="1087" y="699" class="aim-text">Stable, selected features</text>
+  <rect x="1292" y="619" width="198" height="87" rx="13" fill="#f1ebf8" stroke="#cbb9e2" stroke-width="2"/>
+  <rect x="1308" y="636" width="55" height="23" rx="11" fill="#7253a4"/>
+  <text x="1319" y="653" class="tag">AIM 2</text>
+  <text x="1309" y="680" class="aim-title">Prediction</text>
+  <text x="1309" y="699" class="aim-text">Incremental accuracy</text>
+
+  <text x="75" y="869" class="small">TCGA PanCancer Atlas · COADREAD · Architecture selected for the ML course project</text>
+</svg>
