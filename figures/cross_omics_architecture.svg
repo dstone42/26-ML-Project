@@ -70,70 +70,52 @@
   <rect x="75" y="731" width="340" height="103" rx="16" fill="#f1ebf8" stroke="#cbb9e2" stroke-width="2"/>
   <rect x="75" y="731" width="13" height="103" rx="6" fill="#7253a4"/>
   <text x="112" y="770" class="node-title">RNA-expression target</text>
-  <text x="112" y="796" class="node-text">One prespecified CRC biomarker gene</text>
-  <text x="112" y="818" class="small">Continuous expression · repeated per target</text>
-
-  <!-- arrows input -->
-  <path d="M245 276 L245 321" class="arrow"/>
-  <path d="M415 401 C460 401 473 401 505 401" class="arrow-teal"/>
-  <path d="M415 602 C460 602 473 602 505 602" class="arrow-orange"/>
+  <text x="112" y="796" class="node-text">Potential targets for prediction:</text>
+  <text x="112" y="818" class="small">EREG, FAP, and/or CDX2</text>
 
   <!-- model panel -->
-  <rect x="490" y="186" width="505" height="530" rx="20" fill="#f8fafb" stroke="#d7e0e5" stroke-width="2"/>
-  <rect x="520" y="218" width="445" height="43" rx="11" fill="#e8eef2"/>
-  <text x="542" y="246" class="node-title">Outer-training split only</text>
-  <text x="800" y="246" class="small">repeated / nested CV</text>
+  <rect x="490" y="300" width="505" height="320" rx="20" fill="#f8fafb" stroke="#d7e0e5" stroke-width="2"/>
 
   <!-- meth model -->
-  <rect x="530" y="295" width="425" height="138" rx="15" fill="#ffffff" stroke="#8acfc4" stroke-width="2" filter="url(#shadow)"/>
-  <rect x="530" y="295" width="11" height="138" rx="5" fill="#087e8b"/>
-  <text x="565" y="331" class="node-title">Methylation-only elastic net</text>
-  <text x="565" y="358" class="node-text">Inner-CV tuning + genome-wide feature selection</text>
-  <path d="M565 388 L741 388" stroke="#b6c8d0" stroke-width="2"/>
-  <text x="565" y="415" class="small">Output: selected CpGs + coefficient directions</text>
+  <rect x="530" y="337" width="425" height="94" rx="15" fill="#ffffff" stroke="#8acfc4" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="530" y="337" width="11" height="94" rx="5" fill="#087e8b"/>
+  <text x="565" y="373" class="node-title">Methylation-only elastic net</text>
+  <text x="565" y="410" class="small">Output: selected CpGs + coefficient directions</text>
 
   <!-- CNA model -->
-  <rect x="530" y="494" width="425" height="138" rx="15" fill="#ffffff" stroke="#efbd85" stroke-width="2" filter="url(#shadow)"/>
-  <rect x="530" y="494" width="11" height="138" rx="5" fill="#d66a16"/>
-  <text x="565" y="530" class="node-title">CNA-only elastic net</text>
-  <text x="565" y="557" class="node-text">Inner-CV tuning + genome-wide feature selection</text>
-  <path d="M565 587 L741 587" stroke="#b6c8d0" stroke-width="2"/>
-  <text x="565" y="614" class="small">Output: selected CNA genes + coefficient directions</text>
-
-  <!-- feature arrows to integration -->
-  <path d="M955 364 C1016 364 1030 412 1062 412" class="arrow-teal"/>
-  <path d="M955 563 C1016 563 1030 512 1062 512" class="arrow-orange"/>
+  <rect x="530" y="485" width="425" height="94" rx="15" fill="#ffffff" stroke="#efbd85" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="530" y="485" width="11" height="94" rx="5" fill="#d66a16"/>
+  <text x="565" y="521" class="node-title">CNA-only elastic net</text>
+  <text x="565" y="558" class="small">Output: selected CNA genes + coefficient directions</text>
 
   <!-- integration -->
   <rect x="1060" y="320" width="430" height="270" rx="20" fill="#f8fafb" stroke="#d7e0e5" stroke-width="2"/>
   <rect x="1090" y="349" width="370" height="74" rx="14" fill="#e9e1f4" stroke="#cbb9e2" stroke-width="2"/>
   <text x="1120" y="380" class="node-title">Integrated selected-feature model</text>
   <text x="1120" y="404" class="node-text">Selected CpGs + selected CNA features</text>
-  <path d="M1275 423 L1275 455" class="arrow"/>
   <rect x="1090" y="455" width="370" height="94" rx="14" fill="#ffffff" stroke="#a9b9c3" stroke-width="2" filter="url(#shadow)"/>
   <text x="1120" y="490" class="node-title">Held-out expression prediction</text>
   <text x="1120" y="516" class="node-text">Compare all three model predictions</text>
-  <text x="1120" y="537" class="small">Same outer test split for fair comparison</text>
-  <path d="M415 782 C810 782 965 685 1090 552" class="arrow"/>
 
-  <!-- evaluation rail -->
-  <rect x="490" y="748" width="1000" height="86" rx="17" fill="#f3f6f8" stroke="#d7e0e5" stroke-width="2"/>
-  <circle cx="527" cy="791" r="17" fill="#2b6f99"/>
-  <path d="M519 791l6 6 11-13" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="560" y="780" class="node-title">Nested, leakage-safe evaluation</text>
-  <text x="560" y="808" class="node-text">Out-of-fold RMSE · MAE · R²  |  Feature selection frequency and coefficient-sign stability across resamples</text>
 
   <!-- aims -->
   <rect x="1070" y="619" width="198" height="87" rx="13" fill="#e4f5f2" stroke="#8acfc4" stroke-width="2"/>
   <rect x="1086" y="636" width="55" height="23" rx="11" fill="#087e8b"/>
   <text x="1097" y="653" class="tag">AIM 1</text>
   <text x="1087" y="680" class="aim-title">Interpretability</text>
-  <text x="1087" y="699" class="aim-text">Stable, selected features</text>
   <rect x="1292" y="619" width="198" height="87" rx="13" fill="#f1ebf8" stroke="#cbb9e2" stroke-width="2"/>
   <rect x="1308" y="636" width="55" height="23" rx="11" fill="#7253a4"/>
   <text x="1319" y="653" class="tag">AIM 2</text>
   <text x="1309" y="680" class="aim-title">Prediction</text>
-  <text x="1309" y="699" class="aim-text">Incremental accuracy</text>
 
-  <text x="75" y="869" class="small">TCGA PanCancer Atlas · COADREAD · Architecture selected for the ML course project</text>
+  <!-- Connectors are drawn last so arrowheads remain visible.  Each stops just
+       short of its destination border, keeping the routing visually distinct. -->
+  <path d="M245 276 L245 321" class="arrow"/>
+  <path d="M415 401 C455 401 482 384 522 384" class="arrow-teal"/>
+  <path d="M415 602 C455 602 482 532 522 532" class="arrow-orange"/>
+  <path d="M955 384 C1003 384 1024 412 1052 412" class="arrow-teal"/>
+  <path d="M955 532 C1003 532 1024 512 1052 512" class="arrow-orange"/>
+  <path d="M1275 423 L1275 447" class="arrow"/>
+  <path d="M415 731 C660 731 845 736 1008 698 C1034 692 1042 621 1052 552" class="arrow"/>
+
 </svg>
