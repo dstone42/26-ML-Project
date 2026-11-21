@@ -25,5 +25,4 @@ env/
 
 # Locally generated analysis outputs
 outputs/
-results/
 *.log
